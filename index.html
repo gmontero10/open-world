@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open World Adventure</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+
+        <!-- UI Overlay -->
+        <div id="ui-overlay">
+            <!-- Health and Stamina -->
+            <div id="stats-panel">
+                <div class="stat-bar">
+                    <span class="stat-label">HP</span>
+                    <div class="bar-container">
+                        <div id="health-bar" class="bar health"></div>
+                    </div>
+                    <span id="health-text" class="stat-value">100/100</span>
+                </div>
+                <div class="stat-bar">
+                    <span class="stat-label">ST</span>
+                    <div class="bar-container">
+                        <div id="stamina-bar" class="bar stamina"></div>
+                    </div>
+                    <span id="stamina-text" class="stat-value">100/100</span>
+                </div>
+            </div>
+
+            <!-- Minimap -->
+            <div id="minimap-container">
+                <canvas id="minimap"></canvas>
+                <div id="time-display">06:00</div>
+            </div>
+
+            <!-- Inventory Quick Bar -->
+            <div id="quickbar">
+                <div class="slot" data-slot="0"><span class="key-hint">1</span></div>
+                <div class="slot" data-slot="1"><span class="key-hint">2</span></div>
+                <div class="slot" data-slot="2"><span class="key-hint">3</span></div>
+                <div class="slot" data-slot="3"><span class="key-hint">4</span></div>
+                <div class="slot" data-slot="4"><span class="key-hint">5</span></div>
+                <div class="slot" data-slot="5"><span class="key-hint">6</span></div>
+                <div class="slot" data-slot="6"><span class="key-hint">7</span></div>
+                <div class="slot" data-slot="7"><span class="key-hint">8</span></div>
+            </div>
+
+            <!-- Interaction Prompt -->
+            <div id="interaction-prompt" class="hidden">
+                <span id="prompt-text">Press E to interact</span>
+            </div>
+
+            <!-- Dialog Box -->
+            <div id="dialog-box" class="hidden">
+                <div id="dialog-speaker"></div>
+                <div id="dialog-text"></div>
+                <div id="dialog-continue">Press SPACE to continue</div>
+            </div>
+
+            <!-- Inventory Panel -->
+            <div id="inventory-panel" class="hidden">
+                <div class="panel-header">
+                    <h2>Inventory</h2>
+                    <button id="close-inventory">X</button>
+                </div>
+                <div id="inventory-grid"></div>
+                <div id="item-description"></div>
+            </div>
+
+            <!-- Crafting Panel -->
+            <div id="crafting-panel" class="hidden">
+                <div class="panel-header">
+                    <h2>Crafting</h2>
+                    <button id="close-crafting">X</button>
+                </div>
+                <div id="recipe-list"></div>
+                <div id="crafting-result"></div>
+            </div>
+
+            <!-- Quest Log -->
+            <div id="quest-panel" class="hidden">
+                <div class="panel-header">
+                    <h2>Quests</h2>
+                    <button id="close-quests">X</button>
+                </div>
+                <div id="quest-list"></div>
+            </div>
+
+            <!-- Controls Help -->
+            <div id="controls-help">
+                <p>WASD - Move | SHIFT - Run | E - Interact | I - Inventory | C - Craft | Q - Quests | M - Map</p>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <h1>Open World Adventure</h1>
+            <p>Explore a procedurally generated world</p>
+            <button id="start-btn">Start Game</button>
+            <div class="instructions">
+                <h3>Controls</h3>
+                <ul>
+                    <li><strong>WASD</strong> - Move</li>
+                    <li><strong>SHIFT</strong> - Run</li>
+                    <li><strong>E</strong> - Interact</li>
+                    <li><strong>I</strong> - Inventory</li>
+                    <li><strong>C</strong> - Crafting</li>
+                    <li><strong>Q</strong> - Quest Log</li>
+                    <li><strong>M</strong> - Toggle Map</li>
+                    <li><strong>1-8</strong> - Quick slots</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
